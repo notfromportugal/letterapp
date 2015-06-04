@@ -7,3 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 categories = Category.create([{ name: "Birthday"}, { name: "Mother's Day"}, { name: "Father's Day"}])
+
+letter1 = Letter.create({ name: "Birtday card for Bobby", body: "Whatever", category_id: 1})
+
