@@ -1,0 +1,25 @@
+<h1>Compose a new letter</h1>
+
+<%= form_for @letters do |f| %>
+
+    <div>
+        <%= f.label :reciever %>
+        <%= f.text_field :reciever %>
+    </div>
+
+    <div>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+    </div>
+
+    <div>
+        <%= f.label :content %>
+        <%= f.text_area :content %>
+    </div>
+
+
+    <%= f.submit "Save Letter" %>
+
+<% end %>
+
+<%= link_to "Back to Your Letters", letters_path %>

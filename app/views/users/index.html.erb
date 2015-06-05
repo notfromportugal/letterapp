@@ -1,10 +1,17 @@
-<h1>Home Page</h1>
+<h1>Welcome to SnailMail</h1>
+
 
 <% flash.each do |key,value|  %>
     <div class="<%= key %>" > <%= value %> </div>
 <% end %>
 
-<%= link_to "Register", new_user_path  %>
+
+<% if current_user %>
+	<h2>You are signed in as <%= current_user.email %></h2>
+	<%= link_to "View Your Letters", letters_path %>
+<% else %>	
+	<%= link_to "Register", new_user_path  %>
+<% end %>
 
 <% if current_user  %>
   <%= link_to "Logout", destroy_session_path %>

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def index
+    @users = User.all
   end
 
   #return a view named 'new' that will be used to register a new user
@@ -13,7 +14,7 @@ class UsersController < ApplicationController
       if User.create(user_params)
         #redicret to signed in
         flash[:success] = 'you are registered'
-        redirect_to users_path
+        redirect_to letters_path
       else
 
         flash[:error] = 'registration has failed'

@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       #we specify the type of the column and its name
       t.string :email
       t.string :password_digest
-
+      t.string :name
       #since we will use the email to authenticate against, it must be unique
       #this sets up a constraint that the database will enforce. If you attempt to insert
       #a user into the db with the same email as another, the insert will fail

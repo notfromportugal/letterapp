@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-categories = Category.create([{ name: "Birthday"}, { name: "Mother's Day"}, { name: "Father's Day"}])
-
-letter1 = Letter.create({ name: "Birtday card for Bobby", body: "Whatever", category_id: 1})
+letters = letters.create([
+    {reciever: "john", title: "title", content: "this is the content", user_id: "email@address.com"},
+  ])
 

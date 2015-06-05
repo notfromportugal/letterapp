@@ -11,8 +11,8 @@ class SessionsController < ApplicationController
         if user && user.authenticate(user_params[:password])
           session[:user_id] = user.id
 
-          flash[:success] = 'you are signed in!'
-          redirect_to users_path
+          flash[:success] = 'You are signed in!'
+          redirect_to letters_path
         else
           #redirect back to the page
           flash[:error] = 'unable to sign you in'

@@ -1,0 +1,14 @@
+<h1>Your Letters</h1>
+
+<%= link_to "Compose a new Letter", new_letter_path  %>
+
+<ul>
+    <% @letters.each do |letter| %>
+        <li>
+            <strong> <%= letter.title %> </strong> 
+            <%= link_to "Open this Letter", letter_path(letter) %>
+        </li>
+    <% end %>
+</ul>
+
+
