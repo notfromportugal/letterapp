@@ -2,14 +2,21 @@
 
 <%= link_to "Compose a new Letter", new_letter_path  %>
 
+
 <ul>
+   
     <% @letters.each do |letter| %>
         <li>
             <strong> <%= letter.title %> </strong> 
             <%= link_to "Open this Letter", letter_path(letter) %>
         </li>
     <% end %>
-   
+
+    <% if current_user  %>
+  		<%= link_to "Logout", destroy_session_path %>
+	<% else %>
+    	<%= link_to "Login", new_session_path %>
+	<% end %>
+ 
 </ul>
-
-
+  

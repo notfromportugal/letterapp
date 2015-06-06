@@ -1,7 +1,7 @@
 class LettersController < ApplicationController
 
 	def index
-  		@letters = Letter.where(user_id: params[:user_id])
+		@letters = Letter.all
 	end
 
 	def show
@@ -13,12 +13,22 @@ class LettersController < ApplicationController
 	end
 
 	def create
-  		@letter = Letter.new(letter_params)
-  		if @letter.save
-    		redirect_to letters_path
-  		else
-    		render :new
-  		end
+  		@letters = Letter.new(letter_params)
+  		respond_to do |format|
+  		if current_user.letters.push @letters
+	       format.html { redirect_to letters_path, notice: 'Post was successfully created.' }
+	       format.json { render :show, status: :created, location: @letters }
+
+     	else
+	       format.html { render :new }
+	       format.json { render json: @user.errors, status: :unprocessable_entity }
+     	end
+ 	end
+  		# if @letter.save
+    # 		redirect_to letters_path
+  		# else
+    # 		render :new
+  		# end
 	end
 
 	def edit
@@ -29,7 +39,7 @@ class LettersController < ApplicationController
   		@letter = Letter.find(params[:id])
 
   		if @letter.update_attributes(letter_params)
-    		redirect_to letters_path
+    		redirect_to user_letters_path(current_user)
   		else
     		render :edit
   		end

@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
           session[:user_id] = user.id
 
           flash[:success] = 'You are signed in!'
-          redirect_to letters_path
+          redirect_to user_letters_path(current_user)
         else
           #redirect back to the page
           flash[:error] = 'unable to sign you in'

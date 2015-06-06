@@ -9,12 +9,17 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def show
+    @user = User.find(params[:id])
+    @letters = @user.letters
+  end
+
   def create
 
       if User.create(user_params)
         #redicret to signed in
         flash[:success] = 'you are registered'
-        redirect_to letters_path
+        redirect_to new_session_path
       else
 
         flash[:error] = 'registration has failed'

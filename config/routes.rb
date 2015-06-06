@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
     # get "/users" => "users#index", as: :users
     get 'users/new' => 'users#new', as: :new_user
-    
+    get '/users/:id' => 'users#show', as: :user_letters 
+
     post '/' => 'users#create'
 
     get 'sessions/new' => 'sessions#new', as: :new_session
@@ -16,7 +17,7 @@ Rails.application.routes.draw do
 
     get 'targets/' => 'targets#index', as: :targets
 
-    get "letters/" => "letters#index"
+    get "letters/" => "letters#index", as: :letters
 
     get "letters/new" => "letters#new", as: :new_letter
 

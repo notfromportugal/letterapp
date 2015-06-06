@@ -1,5 +1,6 @@
-<h1> <%= @letter.title %> </h1>
+<h2> FROM: <%= @letter.user.email %> </h2>
 <h2> TO: <%= @letter.reciever %> </h2>
+<h1> <%= @letter.title %> </h1>
 
 <p><%= @letter.content %></p>
 
@@ -7,5 +8,5 @@
 
 <%= link_to "Delete this Letter", letter_path, method: :delete, data: { confirm: "Are you sure you want to delete this letter permanently?"} %>
 
-<%= link_to "Back to Your Letters", letters_path %>
+<%= link_to "Back to Your Letters", user_letters_path(current_user) %>
 

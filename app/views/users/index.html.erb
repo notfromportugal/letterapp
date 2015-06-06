@@ -8,7 +8,7 @@
 
 <% if current_user %>
 	<h2>You are signed in as <%= current_user.email %></h2>
-	<%= link_to "View Your Letters", letters_path %>
+	<%= link_to "View Your Letters", user_letters_path(current_user) %>
 <% else %>	
 	<%= link_to "Register", new_user_path  %>
 <% end %>
