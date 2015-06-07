@@ -6,3 +6,18 @@
 .error {
     background-color: rosybrown;
 }
+
+
+
+#logo {
+	height: 50px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	
+}
+
+a.navbar-brand {
+	padding: 0px 5px;
+}
+
+

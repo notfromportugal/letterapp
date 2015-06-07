@@ -16,7 +16,7 @@ class LettersController < ApplicationController
   		@letters = Letter.new(letter_params)
   		respond_to do |format|
   		if current_user.letters.push @letters
-	       format.html { redirect_to letters_path, notice: 'Post was successfully created.' }
+	       format.html { redirect_to user_letters_path(current_user), notice: 'Post was successfully created.' }
 	       format.json { render :show, status: :created, location: @letters }
 
      	else
@@ -48,7 +48,7 @@ class LettersController < ApplicationController
 	def destroy
   		@letter = Letter.find(params[:id])
   		@letter.destroy
-  		redirect_to letters_path
+  		redirect_to user_letters_path(current_user)
 	end
 
 
