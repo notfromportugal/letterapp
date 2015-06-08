@@ -45,7 +45,11 @@
 
 
 <div class="btn btn-info" id="register">
-<%= link_to "Register Your Account", new_user_path %>
+  <% if current_user %> 
+    <%= link_to "Get started writing", new_letter_path %>
+  <% else %> 
+    <%= link_to "Register Your Account", new_user_path %>
+  <% end %>
 </div>
 
 
