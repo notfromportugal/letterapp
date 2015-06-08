@@ -1,3 +1,29 @@
+<nav class="navbar navbar-default navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+
+      <a class="navbar-brand" href="/ ">
+        <img alt="Home" id="logo" src="http://www.iconhot.com/icon/png/devine-icons-part-2/256/mail-2-w.png">
+      </a>
+        
+      <button type="button" class="btn btn-default navbar-btn">
+      <% if current_user %> Sign Out 
+
+      <% else %> Sign In
+      <% end %> 
+      </button>
+       <div class="navbar-right">
+      <% if current_user  %>You are signed in as <%= current_user.email %></p> 
+      <% else %>You are not signed in<% end %>
+      </div>
+    </div>
+      
+  </div>
+</nav>
+
+
+
+
 <h1>Your Letters</h1>
 
 <%= link_to "Compose a new Letter", new_letter_path  %>
