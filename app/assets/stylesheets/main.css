@@ -48,4 +48,12 @@ a.navbar-brand {
 	float: left;
 }
 
+.page-header {
+	text-align: center;
+}
+
+#register {
+	display: block;
+	margin: 0 auto;
+}
 

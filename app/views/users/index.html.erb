@@ -39,8 +39,14 @@
   </div>
 </nav>
 
+<div class="page-header">
+    <h1>Welcome to SnailMail <br> <small>Where we bring mail to the internet</small></h1>
+</div>
 
-<h1>Welcome to SnailMail</h1>
+
+<div class="btn btn-info" id="register">
+<%= link_to "Register Your Account", new_user_path %>
+</div>
 
 
 <% flash.each do |key,value|  %>
