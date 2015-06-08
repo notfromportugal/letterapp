@@ -1,23 +1,41 @@
-<nav class="navbar navbar-default navbar-inverse">
+<nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-
       <a class="navbar-brand" href="/ ">
         <img alt="Home" id="logo" src="http://www.iconhot.com/icon/png/devine-icons-part-2/256/mail-2-w.png">
       </a>
-        
-      <button type="button" class="btn btn-default navbar-btn">
-      <% if current_user %> Sign Out 
 
-      <% else %> Sign In
-      <% end %> 
-      </button>
-       <div class="navbar-right">
-      <% if current_user  %>You are signed in as <%= current_user.email %></p> 
-      <% else %>You are not signed in<% end %>
+      <div class="btn btn-default" id="viewlet">
+        <% if current_user  %>
+          <%= link_to "View Letters", user_letters_path(current_user) %>
+        <% else %>
+          <%= link_to "View Letters", new_session_path %>
+        <% end %>
       </div>
-    </div>
+
+      <div class="btn btn-default" id="compose">
+        <% if current_user  %>
+          <%= link_to "Compose", new_letter_path %>
+        <% else %>
+          <%= link_to "Compose", new_session_path %>
+        <% end %>
+      </div>
+
+      <div class="btn btn-default" id="login">
+        <% if current_user  %>
+          <%= link_to "Logout", destroy_session_path %>
+        <% else %>
+          <%= link_to "Login", new_session_path %>
+        <% end %>
+      </div>
       
+      <p class="navbar-text" id="navtext">
+        <% if current_user  %>You are signed in as <%= current_user.email %></p> 
+        <% else %>You are not signed in<% end %>
+      </p>
+
+    
+    </div>
   </div>
 </nav>
 
@@ -26,23 +44,18 @@
 
 <h1>Your Letters</h1>
 
-<%= link_to "Compose a new Letter", new_letter_path  %>
 
-
-<ul>
-   
+<div class="list-group">
+  <ul>   
     <% @letters.each do |letter| %>
-        <li>
+        <li class="list-group-item active">
             <strong> <%= letter.title %> </strong> 
-            <%= link_to "Open this Letter", letter_path(letter) %>
+            <%= link_to "Click to Open this Letter", letter_path(letter) %>
         </li>
     <% end %>
+  </ul>
+</div>
 
-    <% if current_user  %>
-  		<%= link_to "Logout", destroy_session_path %>
-	<% else %>
-    	<%= link_to "Login", new_session_path %>
-	<% end %>
- 
-</ul>
+
+
   

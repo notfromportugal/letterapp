@@ -5,10 +5,17 @@
         <img alt="Home" id="logo" src="http://www.iconhot.com/icon/png/devine-icons-part-2/256/mail-2-w.png">
       </a>
       <p class="navbar-text navbar-right">
-      <% if current_user  %>You are signed in as <%= current_user.email %></p> 
-      <% else %>You are not signed in<% end %>
+        <% if current_user  %>You are signed in as <%= current_user.email %></p> 
+        <% else %>You are not signed in<% end %>
       </p>
-
+      
+      <div class="btn btn-default" id="login">
+        <% if current_user  %>
+          <%= link_to "Logout", destroy_session_path %>
+        <% else %>
+          <%= link_to "Register", new_user_path %>
+        <% end %>
+      </div>
     
     </div>
   </div>

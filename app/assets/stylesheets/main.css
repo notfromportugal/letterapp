@@ -8,7 +8,12 @@
 }
 
 .navbar-text {
+	float: right;
+}
 
+#navtext {
+	margin-top: 20px;
+	float: right;
 }
 
 
@@ -17,6 +22,7 @@
 	height: 50px;
 	margin-bottom: 0px;
 	margin-top: 0px;
+	float: left;
 	
 }
 
@@ -24,8 +30,22 @@ a.navbar-brand {
 	padding: 0px 5px;
 }
 
-.navbar-header {
-	
+#login {
+	float: right;
+	padding: 10px 10px;
+	margin: 10px;
+}
+
+#compose {
+	margin: 10px;
+	padding: 10px 10px;
+	float: left;
+}
+
+#viewlet {
+	margin: 10px;
+	padding: 10px 10px;
+	float: left;
 }
 
 

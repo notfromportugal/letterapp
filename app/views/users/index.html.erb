@@ -4,9 +4,34 @@
       <a class="navbar-brand" href="/ ">
         <img alt="Home" id="logo" src="http://www.iconhot.com/icon/png/devine-icons-part-2/256/mail-2-w.png">
       </a>
-      <p class="navbar-text">
-      <% if current_user  %>You are signed in as <%= current_user.email %></p> 
-      <% else %>You are not signed in<% end %>
+
+      <div class="btn btn-default" id="viewlet">
+        <% if current_user  %>
+          <%= link_to "View Letters", user_letters_path(current_user) %>
+        <% else %>
+          <%= link_to "View Letters", new_session_path %>
+        <% end %>
+      </div>
+
+      <div class="btn btn-default" id="compose">
+        <% if current_user  %>
+          <%= link_to "Compose", new_letter_path %>
+        <% else %>
+          <%= link_to "Compose", new_session_path %>
+        <% end %>
+      </div>
+
+      <div class="btn btn-default" id="login">
+        <% if current_user  %>
+          <%= link_to "Logout", destroy_session_path %>
+        <% else %>
+          <%= link_to "Login", new_session_path %>
+        <% end %>
+      </div>
+      
+      <p class="navbar-text" id="navtext">
+        <% if current_user  %>You are signed in as <%= current_user.email %></p> 
+        <% else %>You are not signed in<% end %>
       </p>
 
     
@@ -23,14 +48,5 @@
 <% end %>
 
 
-<% if current_user %>
-	<%= link_to "View Your Letters", user_letters_path(current_user) %>
-<% else %>	
-	<%= link_to "Register", new_user_path  %>
-<% end %>
 
-<% if current_user  %>
-  <%= link_to "Logout", destroy_session_path %>
-<% else %>
-    <%= link_to "Login", new_session_path %>
-<% end %>
+
