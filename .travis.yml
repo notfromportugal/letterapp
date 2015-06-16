@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - 2.0.0p481
+  - 2.2.1p85
 branches:
   only:
     - master
