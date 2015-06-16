@@ -15,8 +15,8 @@ class UsersController < ApplicationController
   end
 
   def create
-
-      if User.create(user_params)
+      user = User.new(user_params)
+      if user.save
         #redicret to signed in
         flash[:success] = 'you are registered'
         redirect_to new_session_path
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 
         flash[:error] = 'registration has failed'
 
-        redirect_to new_session_path
+        redirect_to new_user_path
 
       end
   end
