@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-06-16T15:16:24-07:00">2015-06-16T15:16:24-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-06-16T15:38:30-07:00">2015-06-16T15:38:30-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.0
+         2.23
        </span>
     </span> hits/line)
   </h2>
@@ -57,7 +57,7 @@
         <td>10</td>
         <td>10</td>
         <td>0</td>
-        <td>3.4</td>
+        <td>4.0</td>
       </tr>
       
       <tr>
@@ -67,7 +67,7 @@
         <td>18</td>
         <td>18</td>
         <td>0</td>
-        <td>2.5</td>
+        <td>2.6</td>
       </tr>
       
       <tr>
@@ -87,7 +87,7 @@
         <td>18</td>
         <td>18</td>
         <td>0</td>
-        <td>1.4</td>
+        <td>1.7</td>
       </tr>
       
       <tr>
@@ -143,7 +143,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.19
+         2.46
        </span>
     </span> hits/line)
   </h2>
@@ -175,7 +175,7 @@
         <td>10</td>
         <td>10</td>
         <td>0</td>
-        <td>3.4</td>
+        <td>4.0</td>
       </tr>
       
       <tr>
@@ -185,7 +185,7 @@
         <td>18</td>
         <td>18</td>
         <td>0</td>
-        <td>2.5</td>
+        <td>2.6</td>
       </tr>
       
       <tr>
@@ -205,7 +205,7 @@
         <td>18</td>
         <td>18</td>
         <td>0</td>
-        <td>1.4</td>
+        <td>1.7</td>
       </tr>
       
     </tbody>
@@ -503,8 +503,8 @@
           <code class="ruby">  def current_user</code>
         </li>
       
-        <li class="covered" data-hits="25" data-linenumber="14">
-          <span class="hits">25</span>
+        <li class="covered" data-hits="31" data-linenumber="14">
+          <span class="hits">31</span>
           
           <code class="ruby">    @current_user ||= User.find session[:user_id]  if session[:user_id] </code>
         </li>
@@ -611,8 +611,8 @@
           <code class="ruby">  def new</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="5">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="5">
+          <span class="hits">5</span>
           
           <code class="ruby">      @user = User.new</code>
         </li>
@@ -959,8 +959,8 @@
           <code class="ruby">  def new</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="9">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="9">
+          <span class="hits">3</span>
           
           <code class="ruby">    @user = User.new</code>
         </li>
@@ -1013,14 +1013,14 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="18">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="18">
+          <span class="hits">3</span>
           
           <code class="ruby">      user = User.new(user_params)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="19">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="19">
+          <span class="hits">3</span>
           
           <code class="ruby">      if user.save</code>
         </li>
@@ -1031,14 +1031,14 @@
           <code class="ruby">        #redicret to signed in</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="21">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="21">
+          <span class="hits">2</span>
           
           <code class="ruby">        flash[:success] = &#39;you are registered&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="22">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="22">
+          <span class="hits">2</span>
           
           <code class="ruby">        redirect_to new_session_path</code>
         </li>
@@ -1115,8 +1115,8 @@
           <code class="ruby">  def user_params</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="35">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="35">
+          <span class="hits">3</span>
           
           <code class="ruby">    params.require(:user).permit(:email,:password,:password_confirmation)</code>
         </li>
